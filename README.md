@@ -2,18 +2,28 @@
 
 ## Examples
 
-### Bootstrap
+### Symfony 3
+
+#### Bootstrap
 
 ```sh
-git checkout example/bootstrap
+git checkout symfony-3/bootstrap
 
 # Follow instruction in README
 ```
 
-### Upload
+#### Upload
 
 ```sh
-git checkout example/upload
+git checkout symfony-3/upload
+
+# Follow instruction in README
+```
+
+#### Security
+
+```sh
+git checkout symfony-3/security
 
 # Follow instruction in README
 ```
