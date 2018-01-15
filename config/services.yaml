@@ -13,3 +13,20 @@ services:
         resource: ../src/Controller
         tags:
             - { name: controller.service_arguments }
+
+    App\Controller\ImageController:
+        arguments:
+            $filesystem: '@oneup_flysystem.tmp_filesystem'
+
+    App\EventListener\MediaListener:
+        arguments:
+            $filesystem: '@oneup_flysystem.media_filesystem'
+        tags:
+            - { name: doctrine.event_listener , event: postLoad }
+            - { name: doctrine.event_listener , event: postPersist }
+            - { name: doctrine.event_listener , event: postRemove }
+
+    App\Metadata\Property\Factory\PropertyNameCollectionFactory:
+        arguments:
+            $decorated: '@App\Metadata\Property\Factory\PropertyNameCollectionFactory.inner'
+        decorates: api_platform.metadata.property.name_collection_factory
