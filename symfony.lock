@@ -62,8 +62,20 @@
     "league/flysystem": {
         "version": "1.0.41"
     },
+    "lexik/jwt-authentication-bundle": {
+        "version": "2.3",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "2.3",
+            "ref": "751ee6748c1026fa4350c155d1b3a77b7ddca69c"
+        }
+    },
     "monolog/monolog": {
         "version": "1.23.0"
+    },
+    "namshi/jose": {
+        "version": "7.2.3"
     },
     "oneup/flysystem-bundle": {
         "version": "3.0.1"
