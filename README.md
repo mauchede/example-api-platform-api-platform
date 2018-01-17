@@ -28,6 +28,32 @@ git checkout symfony-3/security
 # Follow instruction in README
 ```
 
+### Symfony 4
+
+#### Bootstrap
+
+```sh
+git checkout symfony-4/bootstrap
+
+# Follow instruction in README
+```
+
+#### Upload
+
+```sh
+git checkout symfony-4/upload
+
+# Follow instruction in README
+```
+
+#### Security
+
+```sh
+git checkout symfony-4/security
+
+# Follow instruction in README
+```
+
 ## Contributing
 
 1. Fork it.
