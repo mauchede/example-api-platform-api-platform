@@ -1,0 +1,7 @@
+framework:
+    cache: ~
+    default_locale: '%env(LOCALE)%'
+    php_errors:
+        log: true
+    secret: '%env(APP_SECRET)%'
+    session: false

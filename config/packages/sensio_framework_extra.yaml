@@ -1,0 +1,14 @@
+sensio_framework_extra:
+    cache:
+        annotations: false
+    psr_message:
+        enabled: false
+    request:
+        auto_convert: true
+        converters: true
+    router:
+        annotations: false
+    security:
+        annotations: false
+    view:
+        annotations: false

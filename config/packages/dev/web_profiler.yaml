@@ -1,0 +1,7 @@
+web_profiler:
+    intercept_redirects: false
+    toolbar: true
+
+framework:
+    profiler:
+        only_exceptions: false

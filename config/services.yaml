@@ -1,0 +1,15 @@
+services:
+
+    _defaults:
+        autoconfigure: true
+        autowire: true
+        public: false
+
+    App\:
+        exclude: ../src/{Entity,Migrations,Tests}
+        resource: ../src/*
+
+    App\Controller\:
+        resource: ../src/Controller
+        tags:
+            - { name: controller.service_arguments }

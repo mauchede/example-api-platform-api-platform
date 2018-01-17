@@ -1,0 +1,38 @@
+version: '2.3'
+
+services:
+
+    nginx:
+        build:
+            context: .
+            dockerfile: ./docker/nginx/Dockerfile
+        init: true
+        read_only: true
+        tmpfs:
+            - /var/cache/nginx
+            - /var/run
+
+    php:
+        build:
+            context: .
+            dockerfile: ./docker/php/Dockerfile
+        env_file:
+          - .env
+
+    postgresql:
+        command:
+            - 'postgres'
+        env_file:
+          - .env
+        image: timonier/postgresql:latest
+        init: true
+        read_only: true
+        tmpfs:
+            - /tmp
+            - /var/run
+        volumes:
+            - postgres-data:/var/lib/postgresql/data
+
+volumes:
+
+    postgres-data: {}

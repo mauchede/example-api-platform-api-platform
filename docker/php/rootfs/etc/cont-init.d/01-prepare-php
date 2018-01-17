@@ -1,0 +1,6 @@
+#!/bin/sh
+set -e
+
+if [ "${SYMFONY_ENV}" = "dev" ] || [ "${SYMFONY_ENV}" = "test" ] ; then
+    docker-php-ext-enable xdebug
+fi

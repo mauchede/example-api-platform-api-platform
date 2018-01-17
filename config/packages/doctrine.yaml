@@ -1,0 +1,15 @@
+doctrine:
+    dbal:
+        driver: pdo_pgsql
+        url: 'pgsql://%env(DATABASE_USER)%:%env(DATABASE_PASSWORD)%@%env(DATABASE_HOST)%:%env(DATABASE_PORT)%/%env(DATABASE_NAME)%'
+    orm:
+        auto_generate_proxy_classes: '%kernel.debug%'
+        auto_mapping: true
+        mappings:
+            App:
+                alias: App
+                dir: '%kernel.project_dir%/src/Entity'
+                is_bundle: false
+                prefix: App\Entity
+                type: annotation
+        naming_strategy: App\Doctrine\Mapping\NamingStrategy
