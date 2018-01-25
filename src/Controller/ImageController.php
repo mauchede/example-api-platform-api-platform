@@ -87,7 +87,7 @@ class ImageController extends AbstractController
 
         $fileName = uniqid();
         $fileResource = fopen($file->getRealPath(), 'r');
-        $this->filesystem->writeStream($fileName, fopen($file->getRealPath(), 'r'));
+        $this->filesystem->writeStream($fileName, $fileResource);
         fclose($fileResource);
 
         $image = new Image();
