@@ -80,11 +80,23 @@
     "league/flysystem-cached-adapter": {
         "version": "1.0.6"
     },
+    "lexik/jwt-authentication-bundle": {
+        "version": "2.3",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "2.3",
+            "ref": "751ee6748c1026fa4350c155d1b3a77b7ddca69c"
+        }
+    },
     "monolog/monolog": {
         "version": "1.23.0"
     },
     "myclabs/deep-copy": {
         "version": "1.7.0"
+    },
+    "namshi/jose": {
+        "version": "7.2.3"
     },
     "nelmio/alice": {
         "version": "v3.2.1"

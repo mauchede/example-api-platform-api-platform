@@ -8,6 +8,11 @@ api_platform:
         paths:
             - '%kernel.project_dir%/src/Entity'
     path_segment_name_generator: api_platform.path_segment_name_generator.dash
+    swagger:
+        api_keys:
+            apiKey:
+                name: Authorization
+                type: header
 
 # ---
 
