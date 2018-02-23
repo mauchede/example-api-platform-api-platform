@@ -1,6 +1,6 @@
 # README
 
-Example of upload with `api-platform` and `symfony 3`.
+Example of secured API with `api-platform` and `symfony 3`.
 
 ## Installation
 
@@ -49,6 +49,7 @@ docker-compose exec -u www-data php-fpm bin/console doctrine:schema:update --for
 
 ```sh
 cp .env.dist .env
+sed --in-place 's@JWT_PASSPHRASE=.*@JWT_PASSPHRASE=MySuperPassPhrase@g' .env
 sed --in-place 's@POSTGRES_HOST=.*@POSTGRES_HOST=postgresql@g' .env
 sed --in-place 's@POSTGRES_PASSWORD=.*@POSTGRES_PASSWORD=MySuperPassword@g' .env
 sed --in-place 's@REDIS_HOST=.*@REDIS_HOST=redis@g' .env
@@ -71,12 +72,15 @@ services:
         volumes:
             - php-assets:/srv/web/bundles
             - php-files:/srv/var/files
+            - php-jwt:/srv/var/jwt
 
 volumes:
 
     php-assets: ~
 
     php-files: ~
+
+    php-jwt: ~
 EOF
 
 docker-compose up -d
@@ -88,7 +92,7 @@ docker-compose exec -u www-data php-fpm bin/console doctrine:schema:update --for
 
 ### Administration
 
-This example can be used with [the dedicated administration](https://github.com/mauchede/example-api-platform-admin) (see branches `*/upload`)`.
+This example can be used with [the dedicated administration](https://github.com/mauchede/example-api-platform-admin) (see branches `*/security`)`.
 
 ### Run unit tests
 

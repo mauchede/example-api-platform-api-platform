@@ -26,6 +26,8 @@
         "incenteev-parameters": {
             "env-map": {
                 "cors_allow_origin": "CORS_ALLOW_ORIGIN",
+                "jwt_pass_phrase": "JWT_PASSPHRASE",
+                "jwt_token_ttl": "JWT_TOKEN_TTL",
                 "postgres_host": "POSTGRES_HOST",
                 "postgres_name": "POSTGRES_NAME",
                 "postgres_password": "POSTGRES_PASSWORD",
@@ -52,6 +54,7 @@
         "guzzlehttp/guzzle": "^6.0",
         "incenteev/composer-parameter-handler": "^2.0",
         "league/flysystem-cached-adapter": "^1.0",
+        "lexik/jwt-authentication-bundle": "^2.4",
         "nelmio/cors-bundle": "^1.4",
         "oneup/flysystem-bundle": "^2.0",
         "phpdocumentor/reflection-docblock": "^3.0",

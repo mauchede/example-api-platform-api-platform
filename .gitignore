@@ -12,6 +12,9 @@
 !var/files
 /var/files/*
 !var/files/.gitkeep
+!var/jwt
+/var/jwt/*
+!var/jwt/.gitkeep
 !var/logs
 /var/logs/*
 !var/logs/.gitkeep

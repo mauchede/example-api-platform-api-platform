@@ -8,6 +8,11 @@ api_platform:
         pagination:
             client_items_per_page: true
     path_segment_name_generator: api_platform.path_segment_name_generator.dash
+    swagger:
+        api_keys:
+            apiKey:
+                name: Authorization
+                type: header
 
 doctrine:
     dbal:
@@ -48,6 +53,12 @@ framework:
     validation:
         enable_annotations: true
     trusted_hosts: ~
+
+lexik_jwt_authentication:
+    pass_phrase: '%jwt_pass_phrase%'
+    private_key_path: '%kernel.project_dir%/var/jwt/private.pem'
+    public_key_path: '%kernel.project_dir%/var/jwt/public.pem'
+    token_ttl: '%jwt_token_ttl%'
 
 nelmio_cors:
     defaults:

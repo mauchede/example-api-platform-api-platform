@@ -19,4 +19,6 @@ parameters:
     # security parameters
 
     cors_allow_origin: '^https?://localhost:?[0-9]*$'
+    jwt_pass_phrase: ThisPassPhraseIsNotSoSecretChangeIt
+    jwt_token_ttl: 86400
     secret: ThisTokenIsNotSoSecretChangeIt
