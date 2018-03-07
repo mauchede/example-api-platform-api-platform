@@ -74,6 +74,12 @@
     "jdorn/sql-formatter": {
         "version": "v1.2.17"
     },
+    "league/flysystem": {
+        "version": "1.0.41"
+    },
+    "league/flysystem-cached-adapter": {
+        "version": "1.0.6"
+    },
     "monolog/monolog": {
         "version": "1.23.0"
     },
@@ -90,6 +96,15 @@
             "branch": "master",
             "version": "1.5",
             "ref": "7b6cbc842f8cd3d550815247d12294f6f304a8c4"
+        }
+    },
+    "oneup/flysystem-bundle": {
+        "version": "3.0",
+        "recipe": {
+            "repo": "github.com/symfony/recipes-contrib",
+            "branch": "master",
+            "version": "3.0",
+            "ref": "0eb87bba411c227da027fe5f7c1dc7954b02f242"
         }
     },
     "phpdocumentor/reflection-common": {
@@ -179,7 +194,7 @@
             "repo": "github.com/symfony/recipes",
             "branch": "master",
             "version": "3.3",
-            "ref": "137a14eeb6b3f5370e7147af8aff6518504f50c7"
+            "ref": "b897c5efc15756afb6125b1ecb591c57babb9e90"
         }
     },
     "symfony/http-foundation": {
@@ -248,7 +263,7 @@
             "repo": "github.com/symfony/recipes",
             "branch": "master",
             "version": "3.3",
-            "ref": "85834af1496735f28d831489d12ab1921a875e0d"
+            "ref": "34eb245ce4194e7ae713558084180e2c532e7afd"
         }
     },
     "symfony/serializer": {

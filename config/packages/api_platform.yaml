@@ -8,3 +8,18 @@ api_platform:
         paths:
             - '%kernel.project_dir%/src/Entity'
     path_segment_name_generator: api_platform.path_segment_name_generator.dash
+
+# ---
+
+services:
+
+    _defaults:
+        autoconfigure: true
+        autowire: true
+        public: false
+
+    app.bridge.api_platform.metadata.property.factory.property_name_collection:
+        arguments:
+            $decorated: '@app.bridge.api_platform.metadata.property.factory.property_name_collection.inner'
+        class: App\Bridge\ApiPlatform\Metadata\Property\Factory\PropertyNameCollectionFactory
+        decorates: api_platform.metadata.property.name_collection_factory

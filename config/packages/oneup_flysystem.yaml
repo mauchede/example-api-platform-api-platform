@@ -1,0 +1,13 @@
+oneup_flysystem:
+    adapters:
+        media:
+            local:
+                directory: '%kernel.project_dir%/var/files/media'
+        tmp:
+            local:
+                directory: '%kernel.project_dir%/var/files/tmp'
+    filesystems:
+        media:
+            adapter: media
+        tmp:
+            adapter: tmp

@@ -1,0 +1,14 @@
+framework:
+    cache:
+        pools:
+            app.cache.pool.oneup_flysystem.media:
+                adapter: cache.app
+
+oneup_flysystem:
+    cache:
+        media:
+            psr6:
+                service: app.cache.pool.oneup_flysystem.media
+    filesystems:
+        media:
+            cache: media
