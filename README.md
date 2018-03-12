@@ -1,6 +1,6 @@
 # README
 
-Example of secured API with `api-platform` and `symfony 4`.
+Example of secured and cached API with `api-platform` and `symfony 4`.
 
 ## Installation
 
