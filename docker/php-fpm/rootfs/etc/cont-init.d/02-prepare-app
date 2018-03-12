@@ -1,0 +1,20 @@
+#!/bin/sh
+set -e
+
+if [ -n "${GITHUB_TOKEN}" ] ; then
+    composer config -g github-oauth.github.com "${GITHUB_TOKEN}"
+fi
+
+if [ "${SYMFONY_ENV}" = "dev" ] || [ "${SYMFONY_ENV}" = "test" ] ; then
+    rm -f -r app/config/parameters.yml web/bundles/*
+    until composer install --no-interaction --no-progress --no-suggest --prefer-dist ; do
+        sleep 5
+    done
+fi
+
+if [ "${SYMFONY_ENV}" = "prod" ] ; then
+    rm -f -r app/config/parameters.yml web/bundles/*
+    until composer install --apcu-autoloader --classmap-authoritative --no-dev --no-interaction --no-progress --no-suggest --prefer-dist --optimize-autoloader ; do
+        sleep 5
+    done
+fi

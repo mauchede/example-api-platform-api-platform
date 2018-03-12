@@ -1,0 +1,22 @@
+services:
+
+    _defaults:
+        autoconfigure: true
+        autowire: true
+        public: false
+
+    # ---
+
+    app.bridge.doctrine.mapping.naming_strategy:
+        class: AppBundle\Bridge\Doctrine\Mapping\NamingStrategy
+
+    # ---
+
+    AppBundle\Controller\ResourceController:
+        tags:
+            - { name: controller.service_arguments }
+
+    AppBundle\Factory\ResourcePropertiesFactory:
+        arguments:
+            $filterLocator: '@api_platform.filter_locator'
+            $itemsPerPage: '%api_platform.collection.pagination.items_per_page%'

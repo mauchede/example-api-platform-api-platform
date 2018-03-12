@@ -1,0 +1,53 @@
+imports:
+    - { resource: config.yml }
+    - { resource: services_prod.yml }
+
+api_platform:
+    enable_swagger_ui: false
+    formats:
+        jsonld:
+            mime_types:
+                - application/ld+json
+        json:
+            mime_types:
+                - application/json
+
+doctrine:
+    orm:
+        metadata_cache_driver:
+            id: app.cache.provider.doctrine.metadata
+            type: service
+        query_cache_driver:
+            id: app.cache.provider.doctrine.query
+            type: service
+        result_cache_driver:
+            id: app.cache.provider.doctrine.result
+            type: service
+
+framework:
+    cache:
+        pools:
+            app.cache.pool.doctrine.metadata:
+                adapter: cache.system
+            app.cache.pool.doctrine.query:
+                adapter: cache.system
+            app.cache.pool.doctrine.result:
+                adapter: cache.app
+
+monolog:
+    handlers:
+        console:
+            channels:
+                - '!doctrine'
+                - '!event'
+            process_psr_3_messages: false
+            type: console
+        main:
+            action_level: error
+            handler: nested
+            type: fingers_crossed
+        nested:
+            level: debug
+            path: php://stderr
+            process_psr_3_messages: false
+            type: stream

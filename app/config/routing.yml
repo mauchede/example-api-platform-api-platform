@@ -1,0 +1,7 @@
+annotation:
+    resource: '@AppBundle/Controller/'
+    type: annotation
+
+api_platform:
+    resource: .
+    type: api_platform

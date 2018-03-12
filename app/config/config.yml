@@ -1,0 +1,90 @@
+imports:
+    - { resource: parameters.yml }
+    - { resource: security.yml }
+    - { resource: services.yml }
+
+api_platform:
+    collection:
+        pagination:
+            client_items_per_page: true
+    path_segment_name_generator: api_platform.path_segment_name_generator.dash
+
+doctrine:
+    dbal:
+        charset: UTF8
+        dbname: '%postgres_name%'
+        driver: pdo_pgsql
+        host: '%postgres_host%'
+        password: '%postgres_password%'
+        port: '%postgres_port%'
+        user: '%postgres_user%'
+    orm:
+        auto_generate_proxy_classes: '%kernel.debug%'
+        auto_mapping: true
+        naming_strategy: app.bridge.doctrine.mapping.naming_strategy
+
+framework:
+    assets: ~
+    cache:
+        app: cache.adapter.redis
+        default_redis_provider: "redis://%redis_host%"
+    csrf_protection: false
+    default_locale: '%locale%'
+    fragments: false
+    form: false
+    http_method_override: true
+    php_errors:
+        log: true
+    router:
+        resource: '%kernel.root_dir%/config/routing.yml'
+        strict_requirements: ~
+    secret: '%secret%'
+    serializer:
+        enable_annotations: true
+    session: false
+    templating:
+        engines:
+            - twig
+    validation:
+        enable_annotations: true
+    trusted_hosts: ~
+
+nelmio_cors:
+    defaults:
+        allow_headers:
+            - Authorization
+            - Content-Type
+        allow_methods:
+            - DELETE
+            - GET
+            - OPTIONS
+            - POST
+            - PROPFIND
+            - PUT
+        allow_origin:
+            - '%cors_allow_origin%'
+        expose_headers:
+            - Link
+        max_age: 3600
+        origin_regex: true
+    paths:
+        '^/': ~
+
+sensio_framework_extra:
+    cache:
+        annotations: false
+    psr_message:
+        enabled: false
+    request:
+        auto_convert: true
+        converters: true
+    router:
+        annotations: false
+    security:
+        annotations: false
+    view:
+        annotations: false
+
+twig:
+    debug: '%kernel.debug%'
+    strict_variables: '%kernel.debug%'

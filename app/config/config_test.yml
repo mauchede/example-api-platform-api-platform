@@ -1,0 +1,36 @@
+imports:
+    - { resource: config_prod.yml }
+
+framework:
+    profiler:
+        only_exceptions: false
+    router:
+        resource: '%kernel.root_dir%/config/routing_dev.yml'
+        strict_requirements: true
+    test: ~
+
+hautelook_alice:
+    fixtures_path: fixtures
+    root_dirs:
+        - '%kernel.project_dir%'
+
+monolog:
+    handlers:
+        console:
+            channels:
+                - '!console'
+                - '!doctrine'
+                - '!event'
+            process_psr_3_messages: false
+            type: console
+        nested:
+            channels:
+                - '!event'
+            level: info
+            path: '%kernel.logs_dir%/%kernel.environment%.log'
+            process_psr_3_messages: false
+            type: stream
+
+web_profiler:
+    intercept_redirects: false
+    toolbar: false

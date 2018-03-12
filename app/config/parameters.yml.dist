@@ -1,0 +1,22 @@
+parameters:
+
+    # cache parameters
+
+    redis_host: 127.0.0.1
+
+    # database parameters
+
+    postgres_host: 127.0.0.1
+    postgres_name: api
+    postgres_password: ~
+    postgres_port: ~
+    postgres_user: root
+
+    # internationalization parameters
+
+    locale: en
+
+    # security parameters
+
+    cors_allow_origin: '^https?://localhost:?[0-9]*$'
+    secret: ThisTokenIsNotSoSecretChangeIt

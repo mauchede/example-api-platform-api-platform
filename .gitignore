@@ -1,0 +1,17 @@
+/.env
+/.php_cs
+/app/config/parameters.yml
+/bin/*
+!/bin/console
+/phpunit.xml
+/docker-compose.*.yml
+/var/*
+!var/cache
+/var/cache/*
+!var/cache/.gitkeep
+!var/logs
+/var/logs/*
+!var/logs/.gitkeep
+/vendor/
+/web/bundles
+/web/config.php

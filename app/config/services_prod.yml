@@ -1,0 +1,25 @@
+services:
+
+    _defaults:
+        autoconfigure: true
+        autowire: true
+        public: false
+
+    # ---
+
+    app.cache.provider.doctrine.metadata:
+        arguments:
+            $pool: '@app.cache.pool.doctrine.metadata'
+        class: Symfony\Component\Cache\DoctrineProvider
+
+    app.cache.provider.doctrine.query:
+        arguments:
+            $pool: '@app.cache.pool.doctrine.query'
+        class: Symfony\Component\Cache\DoctrineProvider
+
+    app.cache.provider.doctrine.result:
+        arguments:
+            $pool: '@app.cache.pool.doctrine.result'
+        class: Symfony\Component\Cache\DoctrineProvider
+
+    # ---

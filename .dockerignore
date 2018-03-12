@@ -1,0 +1,20 @@
+# Ignore app files
+
+/.env
+/.php_cs
+/app/config/parameters.yml
+/bin/*
+!bin/console
+/docker-compose.*.yml
+/var
+/vendor
+/web/bundles
+
+# Ignore git files
+
+**/.git
+**/.gitignore
+
+# Ignore ide files
+
+/.idea
