@@ -41,6 +41,7 @@ class AppKernel extends Kernel
             new AppBundle\AppBundle(),
             new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
             new Nelmio\CorsBundle\NelmioCorsBundle(),
+            new Oneup\FlysystemBundle\OneupFlysystemBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             new Symfony\Bundle\FrameworkBundle\FrameworkBundle(),
             new Symfony\Bundle\SecurityBundle\SecurityBundle(),

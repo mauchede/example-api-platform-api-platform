@@ -7,9 +7,10 @@ WORKDIR /srv
 
 RUN set -ex \
 \
-    # Create assets, cache and logs folders
+    # Create assets, cache, files and logs folders
 \
     && mkdir -p \
            var/cache \
+           var/files \
            var/logs \
            web/bundles
