@@ -25,6 +25,7 @@
     "extra": {
         "incenteev-parameters": {
             "env-map": {
+                "cache_key_algo": "CACHE_KEY_ALGO",
                 "cors_allow_origin": "CORS_ALLOW_ORIGIN",
                 "jwt_pass_phrase": "JWT_PASSPHRASE",
                 "jwt_token_ttl": "JWT_TOKEN_TTL",

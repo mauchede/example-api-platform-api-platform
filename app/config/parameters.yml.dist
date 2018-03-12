@@ -2,6 +2,7 @@ parameters:
 
     # cache parameters
 
+    cache_key_algo: sha256
     redis_host: 127.0.0.1
 
     # database parameters

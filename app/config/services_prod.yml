@@ -7,6 +7,32 @@ services:
 
     # ---
 
+    app.bridge.api_platform.event_listener.doctrine.http_cache:
+        arguments:
+            $cache: '@app.cache.pool.api_platform.http.tag_aware'
+            $cacheKeyAlgo: '%env(CACHE_KEY_ALGO)%'
+        class: AppBundle\Bridge\ApiPlatform\EventListener\HttpCacheDoctrineListener
+        tags:
+            - { name: doctrine.event_listener, event: postPersist }
+            - { name: doctrine.event_listener, event: postRemove }
+            - { name: doctrine.event_listener, event: postUpdate }
+
+    app.bridge.api_platform.event_listener.kernel.http_cache:
+        arguments:
+            $cache: '@app.cache.pool.api_platform.http.tag_aware'
+            $cacheKeyAlgo: '%env(CACHE_KEY_ALGO)%'
+            $vary: '%api_platform.http_cache.vary%'
+        class: AppBundle\Bridge\ApiPlatform\EventListener\HttpCacheKernelListener
+        tags:
+            - { name: kernel.event_listener , event: kernel.request , priority: 5 }
+            - { name: kernel.event_listener , event: kernel.response , priority: -5 }
+
+    app.cache.pool.api_platform.http.tag_aware:
+        arguments:
+            $itemsPool: '@app.cache.pool.api_platform.http'
+            $tagsPool: '@app.cache.pool.api_platform.http'
+        class: Symfony\Component\Cache\Adapter\TagAwareAdapter
+
     app.cache.provider.doctrine.metadata:
         arguments:
             $pool: '@app.cache.pool.doctrine.metadata'

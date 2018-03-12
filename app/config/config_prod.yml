@@ -27,6 +27,8 @@ doctrine:
 framework:
     cache:
         pools:
+            app.cache.pool.api_platform.http:
+                adapter: cache.app
             app.cache.pool.doctrine.metadata:
                 adapter: cache.system
             app.cache.pool.doctrine.query:
