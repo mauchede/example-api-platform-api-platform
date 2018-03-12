@@ -1,0 +1,20 @@
+nelmio_cors:
+    defaults:
+        allow_headers:
+            - Authorization
+            - Content-Type
+        allow_methods:
+            - DELETE
+            - GET
+            - OPTIONS
+            - POST
+            - PROPFIND
+            - PUT
+        allow_origin:
+            - '%env(CORS_ALLOW_ORIGIN)%'
+        expose_headers:
+            - Link
+        max_age: 3600
+        origin_regex: true
+    paths:
+        '^/': ~

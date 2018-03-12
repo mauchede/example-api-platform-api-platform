@@ -1,0 +1,2 @@
+security_login_check:
+    path: /login

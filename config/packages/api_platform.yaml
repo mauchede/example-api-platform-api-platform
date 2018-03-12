@@ -1,0 +1,10 @@
+api_platform:
+    http_cache:
+        etag: false
+        vary:
+            - Accept
+            - Authorization
+    mapping:
+        paths:
+            - '%kernel.project_dir%/src/Entity'
+    path_segment_name_generator: api_platform.path_segment_name_generator.dash

@@ -1,0 +1,53 @@
+version: '2.3'
+
+services:
+
+    nginx:
+        build:
+            context: .
+            dockerfile: ./docker/nginx/Dockerfile
+        depends_on:
+            - php-fpm
+        init: true
+        read_only: true
+        tmpfs:
+            - /var/cache/nginx
+            - /var/run
+
+    php-fpm:
+        build:
+            context: .
+            dockerfile: ./docker/php-fpm/Dockerfile
+        env_file:
+            - .env
+        environment:
+            - GITHUB_TOKEN
+        volumes:
+            - php-composer:/root/.composer
+
+    postgresql:
+        command:
+            - 'postgres'
+        env_file:
+            - .env
+        image: timonier/postgresql:latest
+        init: true
+        read_only: true
+        tmpfs:
+            - /run
+            - /tmp
+        volumes:
+            - postgresql-data:/var/lib/postgresql/data
+
+    redis:
+        command:
+            - 'redis-server'
+        image: timonier/redis:latest
+        init: true
+        read_only: true
+
+volumes:
+
+    php-composer: {}
+
+    postgresql-data: {}

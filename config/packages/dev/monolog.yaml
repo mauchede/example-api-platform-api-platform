@@ -1,0 +1,16 @@
+monolog:
+    handlers:
+        console:
+            channels:
+                - '!console'
+                - '!doctrine'
+                - '!event'
+            process_psr_3_messages: false
+            type: console
+        main:
+            channels:
+                - '!event'
+            level: info
+            path: '%kernel.logs_dir%/%kernel.environment%.log'
+            process_psr_3_messages: false
+            type: stream

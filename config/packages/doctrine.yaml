@@ -1,0 +1,27 @@
+doctrine:
+    dbal:
+        driver: pdo_pgsql
+        url: 'pgsql://%env(POSTGRES_USER)%:%env(POSTGRES_PASSWORD)%@%env(POSTGRES_HOST)%:%env(POSTGRES_PORT)%/%env(POSTGRES_DB)%'
+    orm:
+        auto_generate_proxy_classes: '%kernel.debug%'
+        auto_mapping: true
+        mappings:
+            App:
+                alias: App
+                dir: '%kernel.project_dir%/src/Entity'
+                is_bundle: false
+                prefix: App\Entity
+                type: annotation
+        naming_strategy: app.bridge.doctrine.mapping.naming_strategy
+
+# ---
+
+services:
+
+    _defaults:
+        autoconfigure: true
+        autowire: true
+        public: false
+
+    app.bridge.doctrine.mapping.naming_strategy:
+        class: App\Bridge\Doctrine\Mapping\NamingStrategy

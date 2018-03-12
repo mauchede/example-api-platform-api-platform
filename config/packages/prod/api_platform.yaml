@@ -1,0 +1,9 @@
+api_platform:
+    enable_swagger_ui: false
+    formats:
+        jsonld:
+            mime_types:
+                - application/ld+json
+        json:
+            mime_types:
+                - application/json

@@ -1,0 +1,2 @@
+imports:
+    - { resource: ../prod/api_platform.yaml }

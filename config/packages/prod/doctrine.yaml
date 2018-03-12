@@ -1,0 +1,45 @@
+doctrine:
+    orm:
+        metadata_cache_driver:
+            id: app.cache.provider.doctrine.metadata
+            type: service
+        query_cache_driver:
+            id: app.cache.provider.doctrine.query
+            type: service
+        result_cache_driver:
+            id: app.cache.provider.doctrine.result
+            type: service
+
+framework:
+    cache:
+        pools:
+            app.cache.pool.doctrine.metadata:
+                adapter: cache.system
+            app.cache.pool.doctrine.query:
+                adapter: cache.system
+            app.cache.pool.doctrine.result:
+                adapter: cache.app
+
+# ---
+
+services:
+
+    _defaults:
+        autoconfigure: true
+        autowire: true
+        public: false
+
+    app.cache.provider.doctrine.metadata:
+        arguments:
+            $pool: '@app.cache.pool.doctrine.metadata'
+        class: Symfony\Component\Cache\DoctrineProvider
+
+    app.cache.provider.doctrine.query:
+        arguments:
+            $pool: '@app.cache.pool.doctrine.query'
+        class: Symfony\Component\Cache\DoctrineProvider
+
+    app.cache.provider.doctrine.result:
+        arguments:
+            $pool: '@app.cache.pool.doctrine.result'
+        class: Symfony\Component\Cache\DoctrineProvider

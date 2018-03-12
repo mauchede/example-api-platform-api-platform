@@ -1,0 +1,4 @@
+api_platform:
+    prefix: /
+    resource: .
+    type: api_platform

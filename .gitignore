@@ -1,0 +1,15 @@
+###> symfony/framework-bundle ###
+.env
+.php_cs.dist
+/bin/*
+!/bin/console
+/docker-compose.*.yaml
+/public/bundles/
+/var/
+/vendor/
+###< symfony/framework-bundle ###
+
+###> symfony/phpunit-bridge ###
+.phpunit
+/phpunit.xml
+###< symfony/phpunit-bridge ###

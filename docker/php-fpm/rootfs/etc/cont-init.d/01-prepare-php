@@ -1,0 +1,6 @@
+#!/bin/sh
+set -e
+
+if [ "${APP_ENV}" = "dev" ] || [ "${APP_ENV}" = "test" ] ; then
+    docker-php-ext-enable xdebug
+fi
